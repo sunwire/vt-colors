@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 Name:           vt-colors
-Version:        1.0.1
+Version:        1.0.2
 Release:        1%{?dist}
 Summary:        An easy to use tool to change vt colors.
 License:        GPL-2.0-or-later
@@ -28,7 +28,7 @@ mkdir -p %{buildroot}%{_datadir}/vt-colors
 mkdir -p %{buildroot}%{_sysconfdir}/vt-colors
 %__install -Dm0644 vt-colors.service -t %{buildroot}%{_unitdir}
 %__install -Dm0644 vt.palette -t %{buildroot}%{_sysconfdir}/vt-colors
-%__install -Dm0644 palettes/default.palette -t %{buildroot}%{_datadir}/vt-colors
+%__install -Dm0644 palettes/*.palette -t %{buildroot}%{_datadir}/vt-colors
 
 %preun
 %systemd_preun vt-colors.service
@@ -44,6 +44,9 @@ mkdir -p %{buildroot}%{_sysconfdir}/vt-colors
 %doc README.md
 
 %changelog
+* Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.2-1
+- Fix spec file
+
 * Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.1-1
 - Add pink palette
 
