@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 Name:           vt-colors
-Version:        1.0.0
-Release:        2%{?dist}
+Version:        1.0.1
+Release:        1%{?dist}
 Summary:        An easy to use tool to change vt colors.
 License:        GPL-2.0-or-later
 URL:            https://github.com/sunwire/vt-colors
@@ -44,6 +44,9 @@ mkdir -p %{buildroot}%{_sysconfdir}/vt-colors
 %doc README.md
 
 %changelog
+* Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.1-1
+- Add pink palette
+
 * Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.0-2
 - Add config macro
 
