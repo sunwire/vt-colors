@@ -4,7 +4,7 @@
 
 Name:           vt-colors
 Version:        1.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        An easy to use tool to change vt colors.
 License:        GPL-2.0-or-later
 URL:            https://github.com/sunwire/vt-colors
@@ -37,13 +37,16 @@ mkdir -p %{buildroot}%{_sysconfdir}/vt-colors
 %systemd_postun vt-colors.service
 
 %files
-%{_sysconfdir}/vt-colors/*
+%config(noreplace) %{_sysconfdir}/vt-colors/vt.palette
 %{_unitdir}/vt-colors.service
 %{_datadir}/vt-colors/*
 %license LICENSE
 %doc README.md
 
 %changelog
+* Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.0-2
+- Add config macro
+
 * Sun Sep 11 2022 Paweł Marciniak <sunwire+repo@gmail.com> - 1.0.0-1
 - The first release
 
