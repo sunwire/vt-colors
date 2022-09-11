@@ -1,0 +1,13 @@
+[Unit]
+Description=Load VT color palette
+After=systemd-user-sessions.service plymouth-quit-wait.service
+Before=system-getty.slice
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setvtrgb /etc/vt-colors/vt.palette
+RemainAfterExit=yes
+ExecStop=/usr/bin/setvtrgb /usr/share/vt-colors/default.palette
+
+[Install]
+WantedBy=multi-user.target
