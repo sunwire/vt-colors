@@ -10,6 +10,7 @@ License:        GPL-2.0-or-later
 URL:            https://github.com/sunwire/vt-colors
 Source0:        https://github.com/sunwire/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildArch:      noarch
+BuildRequires:  systemd-rpm-macros
 
 Requires:       kbd
 Requires:       systemd
